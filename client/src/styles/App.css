@@ -1,0 +1,87 @@
+/* Nav */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 20px;
+  padding: 1rem;
+  background: #21202b;
+}
+.navbar .links {
+  display: flex;
+  gap: 1rem;
+}
+.navbar a {
+  text-decoration: none;
+  color: #fff;
+}
+.navbar button {
+  cursor: pointer;
+  font-size: 14px;
+  background: transparent;
+  color: #fff;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 0.3rem 0.5rem;
+  outline: none;
+}
+
+/* Tabs */
+.tab-container {
+  display: flex;
+  border-bottom: 0.5px solid #b5b5b5;
+}
+.tab-container hr {
+  border: none;
+  border-right: 0.5px solid #949494;
+}
+.active-tab {
+  border-bottom: 4px solid #363694;
+}
+.icon-container {
+  flex: 1;
+  display: grid;
+  font-size: 20px;
+}
+.icon-container a {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  color: #000;
+}
+.icon-container a:hover {
+  background: #00000017;
+}
+
+/* Posts */
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+.post-container {
+  background: cadetblue;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  height: 140px;
+  padding: 15px;
+}
+.recipe-name {
+  font-size: 26px;
+}
+.recipe-description {
+  font-size: 15px;
+}
+.recipe-time {
+  font-size: 20px;
+}
+.recipe-image {
+  height: 100%;
+}
+.recipe-image img {
+  aspect-ratio: 1/1;
+  height: inherit;
+  object-fit: cover;
+}

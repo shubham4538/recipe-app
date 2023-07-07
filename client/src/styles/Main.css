@@ -1,0 +1,15 @@
+@font-face {
+  src: url("../resources/fonts/Growqins.ttf");
+  font-family: font;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: font;
+}
+button {
+  font-family: font;
+}
