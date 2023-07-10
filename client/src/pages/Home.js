@@ -11,20 +11,23 @@ function Home() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!user) navigate("/register");
-    const config = {
-      headers: {
-        Authorization: `Bearer ${user.token}`,
-      },
-    };
-    axios
-      .get("http://localhost:3001/recipe", config)
-      .then((result) => {
-        setPosts(result.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    if (!user) {
+      navigate("/register");
+    } else {
+      const config = {
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      };
+      axios
+        .get("http://localhost:3001/recipe", config)
+        .then((result) => {
+          setPosts(result.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   }, []);
 
   return !posts ? (
