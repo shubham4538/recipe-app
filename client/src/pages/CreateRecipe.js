@@ -28,7 +28,7 @@ function CreateRecipe() {
       },
     };
     axios
-      .post("http://localhost:3001/recipe", recipe, config)
+      .post("https://recipe-app-kappa-nine.vercel.app/recipe", recipe, config)
       .then((result) => {
         alert("Recipe created successfully!");
         navigate("/account/posts");

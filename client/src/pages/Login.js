@@ -17,7 +17,7 @@ function Login() {
     const data = { username, password };
 
     axios
-      .post("http://localhost:3001/auth/login", data)
+      .post("https://recipe-app-kappa-nine.vercel.app/auth/login", data)
       .then((result) => {
         const logUser = {
           token: result.data.token,

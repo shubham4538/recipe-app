@@ -10,7 +10,7 @@ function SignUp() {
     const data = { username, password };
 
     axios
-      .post("http://localhost:3001/auth/signup", data)
+      .post("https://recipe-app-kappa-nine.vercel.app/auth/signup", data)
       .then((result) => {
         alert(result.data.success);
       })

@@ -15,7 +15,7 @@ function MyRecipes() {
       },
     };
     axios
-      .get("http://localhost:3001/account/recipes", config)
+      .get("https://recipe-app-kappa-nine.vercel.app/account/recipes", config)
       .then((result) => {
         setPosts(result.data);
       })
