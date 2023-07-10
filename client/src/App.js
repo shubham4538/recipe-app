@@ -15,9 +15,11 @@ import CreateRecipe from "./pages/CreateRecipe";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 
-import Navbar from "./components/Navbar";
-import SavedRecipes from "./components/SavedRecipes";
-import MyRecipes from "./components/MyRecipes";
+import Navbar from "./constant/Navbar";
+import SavedRecipes from "./template/SavedRecipes";
+import MyRecipes from "./template/MyRecipes";
+import Recipe from "./pages/Recipe";
+import NotFound from "./error/NotFound";
 
 function App() {
   return (
@@ -31,9 +33,11 @@ function App() {
             <Route path="posts" element={<MyRecipes />} />
             <Route path="saved" element={<SavedRecipes />} />
           </Route>
+          <Route path="/recipe/:id" element={<Recipe />} />
           <Route path="/create" element={<CreateRecipe />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </div>

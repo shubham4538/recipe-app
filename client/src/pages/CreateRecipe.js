@@ -4,7 +4,7 @@ import "../styles/CreateRecipe.css";
 import axios from "axios";
 
 import { LoginContext } from "../context/LoginContext";
-import RenderInput from "../components/RenderInput";
+import RenderInput from "../data/RenderInput";
 
 function CreateRecipe() {
   const { user } = useContext(LoginContext);

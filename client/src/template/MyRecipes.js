@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 
 import { LoginContext } from "../context/LoginContext";
-import Posts from "./Posts";
+import Posts from "../components/Posts";
 
 function MyRecipes() {
   const [posts, setPosts] = useState(null);

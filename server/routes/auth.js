@@ -29,7 +29,7 @@ authRouter.post("/login", async (req, res) => {
     if (!validPass) {
       res.status(401).json({ error: "User credentials Incorrect!" });
     } else {
-      const token = jwt.sign({ _id: user._id }, "secret");
+      const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET);
       res.json({ token, username: user.username });
     }
   }
