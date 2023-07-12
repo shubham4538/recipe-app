@@ -1,7 +1,36 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
+import axios from "axios";
 
-function SavedRecipes() {
-  return <div>Saved goes here</div>;
+import { LoginContext } from "../context/LoginContext";
+import Posts from "../components/Posts";
+
+function SavedRecipe() {
+  const [posts, setPosts] = useState(null);
+  const { user } = useContext(LoginContext);
+
+  useEffect(() => {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${user.token}`,
+      },
+    };
+    axios
+      .get("https://recipe-app-kappa-nine.vercel.app/recipe/savedonly", config)
+      .then((result) => {
+        setPosts(result.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  return !posts ? (
+    <div>Loading...</div>
+  ) : posts.length > 0 ? (
+    <Posts data={posts} />
+  ) : (
+    <div>No Posts yet</div>
+  );
 }
 
-export default SavedRecipes;
+export default SavedRecipe;

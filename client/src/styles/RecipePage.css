@@ -2,13 +2,8 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  /* align-items: center; */
   width: calc(50vw + 330px);
   max-width: 100%;
-  /* height: 110vh;
-  overflow-y: auto;
-  overflow-x: hidden;
-  perspective: 10px; */
   padding: 10px;
 }
 .recipe-container img {
@@ -19,7 +14,6 @@
 }
 .recipe-container ul {
   position: relative;
-  /* left: 50px; */
 }
 .recipe-container div {
   font-size: 20px;
@@ -27,20 +21,3 @@
 .recipe-container span {
   font-weight: bold;
 }
-
-/* .recipe-container ul li {
-  display: flex;
-} */
-/* .parallax {
-  position: relative;
-  display: flex;
-  align-items: center;
-  height: 80%;
-  justify-content: center;
-  transform-style: preserve-3d;
-  z-index: -1;
-}
-.parallax img {
-  z-index: -1;
-  object-fit: cover;
-} */

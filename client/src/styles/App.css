@@ -57,16 +57,20 @@
 .posts {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 10px;
   padding: 10px;
 }
 .post-container {
-  background: cadetblue;
   display: flex;
   justify-content: space-between;
   gap: 15px;
-  height: 140px;
+  height: calc(130px + 10vw);
+  max-height: 200px;
+  width: calc(550px + 20vw);
+  max-width: calc(100vw - 20px);
   padding: 15px;
+  background: cadetblue;
 }
 .saved-container {
   display: flex;
@@ -78,6 +82,7 @@
   font-size: 20px;
 }
 .recipe-details {
+  flex: 1;
   display: flex;
   flex-direction: column;
 }
@@ -105,4 +110,30 @@
   aspect-ratio: 1/1;
   height: inherit;
   object-fit: cover;
+}
+
+@media (max-width: 468px) {
+  .post-container {
+    flex-direction: column-reverse;
+    height: auto;
+    max-height: none;
+    gap: 0;
+  }
+  .recipe-image {
+    width: 100%;
+  }
+  .recipe-image img {
+    aspect-ratio: auto;
+    width: inherit;
+    height: calc(50px + 20vw);
+  }
+  .recipe-name {
+    font-size: 20px;
+  }
+  .recipe-description {
+    font-size: 13px;
+  }
+  .recipe-time {
+    font-size: 17px;
+  }
 }

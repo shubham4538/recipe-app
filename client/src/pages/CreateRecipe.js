@@ -7,6 +7,8 @@ import { LoginContext } from "../context/LoginContext";
 import RenderInput from "../data/RenderInput";
 
 function CreateRecipe() {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState({ message: null });
   const { user } = useContext(LoginContext);
   const navigate = useNavigate();
   const [recipe, setRecipe] = useState({
@@ -21,6 +23,8 @@ function CreateRecipe() {
   const submitRecipe = (e) => {
     e.preventDefault();
     console.log(recipe);
+    setError({ message: null });
+    setLoading(true);
 
     const config = {
       headers: {
@@ -34,7 +38,7 @@ function CreateRecipe() {
         navigate("/account/posts");
       })
       .catch((err) => {
-        console.log(err);
+        setError({ message: err });
       });
   };
 
@@ -63,6 +67,14 @@ function CreateRecipe() {
   return (
     <div className="form-container">
       <h2>Create yuor Recipe</h2>
+      {error.message ? (
+        <div className="error">
+          <i className="far fa-circle-exclamation"></i>
+          <span>{error.message}</span>
+        </div>
+      ) : (
+        <></>
+      )}
       <form className="recipe-form" onSubmit={(e) => submitRecipe(e)}>
         {RenderInput.map((field, key) => {
           return (
@@ -115,8 +127,13 @@ function CreateRecipe() {
             </div>
           );
         })}
-
-        <button type="submit">Submit</button>
+        <button className="submit-button" type="submit">
+          {loading ? (
+            <i className="fa-duotone fa-spinner-third fa-spin"></i>
+          ) : (
+            "submit"
+          )}
+        </button>
       </form>
     </div>
   );

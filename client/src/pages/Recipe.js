@@ -1,29 +1,23 @@
-import React, { useEffect } from "react";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import React from "react";
+import { redirect, useLocation, useParams } from "react-router-dom";
 import "../styles/RecipePage.css";
 
 function Recipe() {
   const { id } = useParams();
   const location = useLocation();
-  const navigate = useNavigate();
   const recipe = location.state;
 
-  useEffect(() => {
-    if (!recipe || recipe._id !== id) navigate("/");
-  }, []);
+  if (!recipe || recipe._id !== id) redirect("/");
 
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       <div className="recipe-container">
-        {/* <div className="parallax"> */}
         <h1 style={{ alignSelf: "center" }}>{recipe.name}</h1>
         <img src={recipe.image_url} alt="" />
-        {/* </div> */}
         <div>
           <ps>Prepration time: {recipe.cooking_time} minutes</ps>
           <i className="far fa-alarm-clock"></i>
         </div>
-
         <div>
           <span>Description: </span>
           {recipe.description}

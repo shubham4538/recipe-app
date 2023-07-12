@@ -4,6 +4,7 @@
 }
 
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -16,4 +17,15 @@ body {
 }
 button {
   font-family: font;
+}
+.error {
+  color: #d62f2f;
+}
+.submit-button {
+  cursor: pointer;
+  padding: 5px 7px;
+  border-radius: 5px;
+  font-size: 17px;
+  border: 2px solid #000;
+  align-self: center;
 }

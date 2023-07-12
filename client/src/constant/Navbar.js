@@ -20,7 +20,7 @@ function Navbar() {
           <div className="links">
             <Link to="/">Home</Link>
             <Link to="/account">Account</Link>
-            <Link to="/Create">Create</Link>
+            <Link to="/create">Create</Link>
           </div>
           <button onClick={logout}>Logout</button>
         </>
