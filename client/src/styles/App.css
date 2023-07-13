@@ -63,14 +63,20 @@
 }
 .post-container {
   display: flex;
-  justify-content: space-between;
-  gap: 15px;
-  height: calc(130px + 10vw);
-  max-height: 200px;
+  flex-direction: column;
+  gap: 5px;
+  padding: 15px;
+  border-radius: 10px;
+  background: cadetblue;
   width: calc(550px + 20vw);
   max-width: calc(100vw - 20px);
-  padding: 15px;
-  background: cadetblue;
+}
+.link-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  height: calc(70px + 10vw);
+  max-height: 200px;
 }
 .saved-container {
   display: flex;
@@ -110,14 +116,20 @@
   aspect-ratio: 1/1;
   height: inherit;
   object-fit: cover;
+  border-radius: 5px;
 }
 
 @media (max-width: 468px) {
   .post-container {
-    flex-direction: column-reverse;
     height: auto;
     max-height: none;
-    gap: 0;
+    gap: 10px;
+  }
+  .link-container {
+    flex-direction: column-reverse;
+    gap: 5px;
+    height: auto;
+    max-height: none;
   }
   .recipe-image {
     width: 100%;

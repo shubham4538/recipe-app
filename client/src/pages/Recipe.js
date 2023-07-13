@@ -19,20 +19,23 @@ function Recipe() {
           <i className="far fa-alarm-clock"></i>
         </div>
         <div>
-          <span>Description: </span>
-          {recipe.description}
+          <span style={{ fontSize: "20px" }} className="bold underline">
+            description:
+          </span>
+          &nbsp;
+          <span style={{ fontSize: "17px" }}>{recipe.description}</span>
         </div>
         <div>
-          <span>Ingredients</span>
-          <ul>
+          <span className="bold underline">ingredients:</span>
+          <ul style={{ fontSize: "18px" }}>
             {recipe.ingredients.map((ingredient) => {
               return <li>{ingredient}</li>;
             })}
           </ul>
         </div>
         <div>
-          <span>Steps</span>
-          <ul>
+          <span className="bold underline">steps:</span>
+          <ul style={{ fontSize: "18px" }}>
             {recipe.steps.map((step) => {
               return <li>{step}</li>;
             })}
