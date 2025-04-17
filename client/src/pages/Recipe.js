@@ -29,7 +29,7 @@ function Recipe() {
           <span className="bold underline">ingredients:</span>
           <ul style={{ fontSize: "18px" }}>
             {recipe.ingredients.map((ingredient) => {
-              return <li>{ingredient}</li>;
+              return <li key={ingredient}>{ingredient}</li>;
             })}
           </ul>
         </div>

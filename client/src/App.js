@@ -15,11 +15,11 @@ import CreateRecipe from "./pages/CreateRecipe";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 
-import Navbar from "./constant/Navbar";
 import SavedRecipes from "./template/SavedRecipes";
 import MyRecipes from "./template/MyRecipes";
 import Recipe from "./pages/Recipe";
 import NotFound from "./error/NotFound";
+import Layout from "./constant/Layout";
 
 function App() {
   return (
@@ -27,19 +27,20 @@ function App() {
       style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}
     >
       <Router>
-        <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/account" element={<Account />}>
-            <Route index element={<Navigate to="posts" />} />
-            <Route path="posts" element={<MyRecipes />} />
-            <Route path="saved" element={<SavedRecipes />} />
-          </Route>
-          <Route path="/recipe/:id" element={<Recipe />} />
-          <Route path="/create" element={<CreateRecipe />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="*" element={<NotFound />} />
+          <Route element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/account" element={<Account />}>
+              <Route index element={<Navigate to="posts" />} />
+              <Route path="posts" element={<MyRecipes />} />
+              <Route path="saved" element={<SavedRecipes />} />
+            </Route>
+            <Route path="/recipe/:id" element={<Recipe />} />
+            <Route path="/create" element={<CreateRecipe />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
         </Routes>
       </Router>
     </div>

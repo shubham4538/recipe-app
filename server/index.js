@@ -27,6 +27,8 @@ app.use(requireAuth);
 app.use("/recipe", recipeRouter);
 app.use("/account", accountRouter);
 
+// for KDC server (remove after few days)
+
 app.listen(port, () => {
   console.log(`Running on Port ${port}`);
 });
